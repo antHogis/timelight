@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <random>
 #include <stdexcept>
+#include <iostream>
 
 namespace Light
 {
