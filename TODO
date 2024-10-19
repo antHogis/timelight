@@ -1,0 +1,13 @@
+- Light cycle
+	- Timed cycles for morning,noon,afternoon,evening,night.
+	- Transitions between cycles
+	- Specific colour distributions for different cycles.
+		- Use subset of cycle's colour distribution to create frames within the cycles.
+		  Transition between frames for dynamic effect.
+- TOML config
+	- Configuration of the cycles' colour distributions
+	- Configuration of the times the cycles are activated
+- Different effects?
+	- Waves?
+	- Flame-like flickering practically implemented
+
