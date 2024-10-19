@@ -11,10 +11,7 @@ namespace Light
 	struct LightElement
 	{
 		LightElement();
-		LightElement(LightComponent red,
-		             LightComponent green,
-		             LightComponent blue,
-		             LightComponent luminance);
+		LightElement(LightComponent red, LightComponent green, LightComponent blue);
 
 		static LightElement random();
 
@@ -22,15 +19,9 @@ namespace Light
 		                           ColourDistribution green_dist,
 		                           ColourDistribution blue_dist);
 
-		static LightElement random(ColourDistribution red_dist,
-		                           ColourDistribution green_dist,
-		                           ColourDistribution blue_dist,
-		                           ColourDistribution luminance_dist);
-
 		LightComponent red;
 		LightComponent green;
 		LightComponent blue;
-		LightComponent luminance;
 	};
 
 	std::ostream& operator<<(std::ostream& strm, const LightElement& a);

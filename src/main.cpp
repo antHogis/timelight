@@ -1,8 +1,6 @@
 #include "adapter/terminal_adapter.hpp"
 #include "light/light_matrix.hpp"
 #include <chrono>
-#include <cmath>
-#include <cstdlib>
 #include <iostream>
 #include <thread>
 
