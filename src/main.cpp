@@ -1,9 +1,11 @@
 // A simple program that computes the square root of a number
 #include "adapter/terminal_adapter.hpp"
 #include "light/light_matrix.hpp"
+#include <chrono>
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
+#include <thread>
 
 // Should already be defined in CMake
 #ifndef PROJECT_VERSION
@@ -16,10 +18,14 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 	std::cout << "TimeLight version " << PROJECT_VERSION << std::endl;
 
 	Light::LightMatrix matrix(10, 100);
-	matrix.randomize();
-
 	Adapter::TerminalAdapter adapter;
-	adapter.displayMatrix(matrix);
+
+	while (true)
+	{
+		matrix.randomize();
+		adapter.displayMatrix(matrix);
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+	}
 
 	return 0;
 }

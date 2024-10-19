@@ -5,30 +5,47 @@
 
 namespace Adapter
 {
-	TerminalAdapter::TerminalAdapter() : AbstractAdapter()
+	TerminalAdapter::TerminalAdapter() : AbstractAdapter(), has_printed_(false)
 	{
 	}
 
 	void TerminalAdapter::displayMatrix(Light::LightMatrix& matrix)
 	{
-		for (auto row : matrix.getImpl())
+		auto& matrix_impl = matrix.getImpl();
+
+		if (has_printed_)
 		{
-			for (auto val : row)
-			{
-				addColourBlock(val);
-			}
-			std::cout << std::endl;
+			// Move the cursor up
+			std::cout << "\033[" << matrix_impl.size() << "A";
 		}
+
+		for (std::vector<Light::LightElement>& row : matrix_impl)
+		{
+			if (has_printed_) {
+				// Clear the line
+				std::cout << "\033[2K";
+			}
+
+			std::ostringstream row_stream;
+			for (auto& val : row)
+			{
+				addColourBlock(row_stream, val);
+			}
+			std::cout << row_stream.str() << std::endl;
+			std::cout.flush();
+		}
+
+		has_printed_ = true;
 	}
 
-	void TerminalAdapter::addColourBlock(Light::LightElement& e)
+	void TerminalAdapter::addColourBlock( std::ostringstream& row_stream, Light::LightElement& e)
 	{
 		std::string rgb = (std::ostringstream()
 		                   << (int)e.red << ';' << (int)e.green << ';' << (int)e.blue)
 							  .str();
 
 		// Set text color (RGB)
-		std::cout << "\033[38;2;" << rgb << "m\033[48;2;" << rgb << "m  \033[0m";
+		row_stream << "\033[38;2;" << rgb << "m\033[48;2;" << rgb << "m  \033[0m";
 	}
 
 } // namespace Adapter
