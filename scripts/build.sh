@@ -8,6 +8,6 @@ BUILD_DIR="${SCRIPT_DIR}/../build"
 mkdir -p $BUILD_DIR
 pushd $BUILD_DIR > /dev/null
 
-cmake ../src
+cmake ../src -DCMAKE_BUILD_TYPE=debug -DCMAKE_CXX_COMPILER=/usr/bin/clang++
 cmake --build .
 
