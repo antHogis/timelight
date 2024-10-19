@@ -3,6 +3,7 @@
 
 #include "light_element.hpp"
 #include <vector>
+
 namespace Light
 {
 	typedef std::vector<std::vector<LightElement>> LightMatrixImpl;

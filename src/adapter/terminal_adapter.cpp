@@ -1,6 +1,7 @@
 #include "terminal_adapter.hpp"
 #include "../light/light_matrix.hpp"
 #include "abstract_adapter.hpp"
+#include <iostream>
 #include <sstream>
 
 namespace Adapter
@@ -21,7 +22,8 @@ namespace Adapter
 
 		for (std::vector<Light::LightElement>& row : matrix_impl)
 		{
-			if (has_printed_) {
+			if (has_printed_)
+			{
 				// Clear the line
 				std::cout << "\033[2K";
 			}
@@ -38,7 +40,8 @@ namespace Adapter
 		has_printed_ = true;
 	}
 
-	void TerminalAdapter::addColourBlock( std::ostringstream& row_stream, Light::LightElement& e)
+	void TerminalAdapter::addColourBlock(std::ostringstream& row_stream,
+	                                     Light::LightElement& e)
 	{
 		std::string rgb = (std::ostringstream()
 		                   << (int)e.red << ';' << (int)e.green << ';' << (int)e.blue)

@@ -20,11 +20,30 @@ namespace Light
 
 	LightElement LightElement::random()
 	{
+		ColourDistribution dist(0, 255);
+
+		return random(dist, dist, dist, dist);
+	}
+
+	LightElement LightElement::random(ColourDistribution red_dist,
+	                                  ColourDistribution green_dist,
+	                                  ColourDistribution blue_dist)
+	{
+		return random(red_dist, green_dist, blue_dist, ColourDistribution(0, 255));
+	}
+
+	LightElement LightElement::random(ColourDistribution red_dist,
+	                                  ColourDistribution green_dist,
+	                                  ColourDistribution blue_dist,
+	                                  ColourDistribution luminance_dist)
+	{
 		std::random_device rd;
 		std::mt19937 mt(rd());
-		std::uniform_int_distribution<std::mt19937::result_type> dist(0, 255);
 
-		return LightElement(dist(mt), dist(mt), dist(mt), dist(mt));
+		return LightElement(red_dist(mt),
+		                    green_dist(mt),
+		                    blue_dist(mt),
+		                    luminance_dist(mt));
 	}
 
 	std::ostream& operator<<(std::ostream& os, const LightElement& a)

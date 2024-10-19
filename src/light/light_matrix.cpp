@@ -1,4 +1,5 @@
 #include "light_matrix.hpp"
+#include "light_element.hpp"
 
 namespace Light
 {
@@ -23,7 +24,9 @@ namespace Light
 		{
 			for (LightMatrixRowSize i = 0; i < row.size(); i++)
 			{
-				row[i] = LightElement::random();
+				row[i] = LightElement::random(ColourDistribution(180, 220),
+				                              ColourDistribution(100, 120),
+				                              ColourDistribution(30, 50));
 			}
 		}
 	}
