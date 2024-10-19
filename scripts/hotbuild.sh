@@ -8,7 +8,6 @@ pushd $SCRIPT_DIR/.. > /dev/null
 run_build() {
   pkill -f './build/TimeLight'  # Kills the running program
   ./scripts/build.sh && ./build/TimeLight &  # Rebuild and restart in the background
-
 }
 
 run_build

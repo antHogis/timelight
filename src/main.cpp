@@ -1,4 +1,3 @@
-// A simple program that computes the square root of a number
 #include "adapter/terminal_adapter.hpp"
 #include "light/light_matrix.hpp"
 #include <chrono>

@@ -1,4 +1,3 @@
-# Probably doesn't need to be this recent but it's what I use
 cmake_minimum_required(VERSION 3.10)
 
 project(TimeLight LANGUAGES CXX VERSION 0.1.0)
