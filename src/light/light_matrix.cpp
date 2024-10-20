@@ -13,7 +13,7 @@ namespace Light
 		}
 	}
 
-	LightElement& LightMatrix::elementAt(int row, int col)
+	LightElement& LightMatrix::element_at(int row, int col)
 	{
 		return matrix_.at(row).at(col);
 	}
@@ -31,7 +31,7 @@ namespace Light
 		}
 	}
 
-	LightMatrixImpl& LightMatrix::getImpl()
+	LightMatrixImpl& LightMatrix::get_impl()
 	{
 		return matrix_;
 	}

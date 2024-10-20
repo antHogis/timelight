@@ -10,9 +10,9 @@ namespace Adapter
 	{
 	}
 
-	void TerminalAdapter::displayMatrix(Light::LightMatrix& matrix)
+	void TerminalAdapter::display_matrix(Light::LightMatrix& matrix)
 	{
-		auto& matrix_impl = matrix.getImpl();
+		auto& matrix_impl = matrix.get_impl();
 
 		if (has_printed_)
 		{
@@ -31,7 +31,7 @@ namespace Adapter
 			std::ostringstream row_stream;
 			for (auto& val : row)
 			{
-				addColourBlock(row_stream, val);
+				add_colour_block(row_stream, val);
 			}
 			std::cout << row_stream.str() << std::endl;
 			std::cout.flush();
@@ -40,7 +40,7 @@ namespace Adapter
 		has_printed_ = true;
 	}
 
-	void TerminalAdapter::addColourBlock(std::ostringstream& row_stream,
+	void TerminalAdapter::add_colour_block(std::ostringstream& row_stream,
 	                                     Light::LightElement& e)
 	{
 		std::string rgb = (std::ostringstream()

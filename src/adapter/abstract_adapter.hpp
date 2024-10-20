@@ -10,7 +10,7 @@ namespace Adapter
 	public:
 		AbstractAdapter() {};
 
-		virtual void displayMatrix(Light::LightMatrix& matrix) = 0;
+		virtual void display_matrix(Light::LightMatrix& matrix) = 0;
 	};
 
 } // namespace Adapter

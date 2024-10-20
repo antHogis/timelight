@@ -24,7 +24,7 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 	while (true)
 	{
 		matrix.randomize();
-		adapter.displayMatrix(matrix);
+		adapter.display_matrix(matrix);
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 

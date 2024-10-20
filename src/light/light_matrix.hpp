@@ -14,11 +14,11 @@ namespace Light
 	public:
 		LightMatrix(int rows, int cols);
 
-		LightElement& elementAt(int row, int col);
+		LightElement& element_at(int row, int col);
 
 		void randomize();
 
-		LightMatrixImpl& getImpl();
+		LightMatrixImpl& get_impl();
 
 	private:
 		LightMatrixImpl matrix_;

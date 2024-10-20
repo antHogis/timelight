@@ -10,7 +10,7 @@ namespace App
 {
 	Config::Config()
 	{
-		const auto& opt_raw_config = getRawConfig();
+		const auto& opt_raw_config = get_raw_config();
 		if (!opt_raw_config.has_value())
 		{
 			return;
@@ -20,14 +20,14 @@ namespace App
 		maybe_set_int(data, "foo", &foo);
 	}
 
-	std::string Config::toString() const
+	std::string Config::to_string() const
 	{
 		std::stringstream ss;
 		ss << "{ foo: " << foo << " }";
 		return ss.str();
 	}
 
-	std::optional<RawConfig> Config::getRawConfig()
+	std::optional<RawConfig> Config::get_raw_config()
 	{
 		try
 		{
@@ -63,7 +63,7 @@ namespace App
 
 	std::ostream& operator<<(std::ostream& strm, const Config& config)
 	{
-		return strm << config.toString();
+		return strm << config.to_string();
 	}
 
 } // namespace App

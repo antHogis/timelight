@@ -16,10 +16,10 @@ namespace App
 		int foo = 30;
 
 		Config();
-		std::string toString() const;
+		std::string to_string() const;
 
 	private:
-		std::optional<RawConfig> getRawConfig();
+		std::optional<RawConfig> get_raw_config();
 		void maybe_set_int(const RawConfig& data, const std::string& key, int* val);
 	};
 
