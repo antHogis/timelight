@@ -1,5 +1,5 @@
-#ifndef LIGHT_ELEMENT_HPP
-#define LIGHT_ELEMENT_HPP
+#ifndef TIMELIGHT_LIGHT_ELEMENT_HPP
+#define TIMELIGHT_LIGHT_ELEMENT_HPP
 
 #include <random>
 

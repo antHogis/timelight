@@ -1,5 +1,5 @@
-#ifndef ABSTRACT_ADAPTER_HPP
-#define ABSTRACT_ADAPTER_HPP
+#ifndef TIMELIGHT_ABSTRACT_ADAPTER_HPP
+#define TIMELIGHT_ABSTRACT_ADAPTER_HPP
 
 #include "../light/light_matrix.hpp"
 

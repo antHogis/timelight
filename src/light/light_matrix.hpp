@@ -1,5 +1,5 @@
-#ifndef LIGHT_MATRIX_HPP
-#define LIGHT_MATRIX_HPP
+#ifndef TIMELIGHT_LIGHT_MATRIX_HPP
+#define TIMELIGHT_LIGHT_MATRIX_HPP
 
 #include "light_element.hpp"
 #include <vector>

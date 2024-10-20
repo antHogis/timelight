@@ -1,5 +1,5 @@
-#ifndef TERMINAL_ADAPTER_HPP
-#define TERMINAL_ADAPTER_HPP
+#ifndef TIMELIGHT_TERMINAL_ADAPTER_HPP
+#define TIMELIGHT_TERMINAL_ADAPTER_HPP
 
 #include "abstract_adapter.hpp"
 
