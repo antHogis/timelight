@@ -17,13 +17,27 @@ namespace App
 		}
 		const auto& data = opt_raw_config.value();
 
-		maybe_set_int(data, "foo", &foo);
+		if (data.contains("light-matrix") && data.at("light-matrix").is_table())
+		{
+			auto& light_matrix = data.at("light-matrix").as_table();
+
+			set_opt_int(light_matrix, "rows", &light_matrix_.rows);
+			set_opt_int(light_matrix, "cols", &light_matrix_.cols);
+		}
+	}
+
+	const LightMatrixConfig Config::light_matrix() const
+	{
+		return light_matrix_;
 	}
 
 	std::string Config::to_string() const
 	{
 		std::stringstream ss;
-		ss << "{ foo: " << foo << " }";
+		ss << "{ ";
+		ss << "light_matrix: { rows: " << light_matrix_.rows
+		   << ", cols: " << light_matrix_.cols << " }";
+		ss << " }";
 		return ss.str();
 	}
 
@@ -53,7 +67,7 @@ namespace App
 		}
 	}
 
-	void Config::maybe_set_int(const RawConfig& data, const std::string& key, int* val)
+	void Config::set_opt_int(const RawConfig& data, const std::string& key, int* val)
 	{
 		if (data.contains(key) && data.at(key).is_integer())
 		{

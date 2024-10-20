@@ -10,17 +10,23 @@ namespace App
 {
 	typedef toml::basic_value<toml::type_config> RawConfig;
 
+	struct LightMatrixConfig {
+		int rows = 1;
+		int cols = 10;
+	};
+
 	class Config
 	{
 	public:
-		int foo = 30;
-
 		Config();
 		std::string to_string() const;
+		const LightMatrixConfig light_matrix() const;
 
 	private:
+		LightMatrixConfig light_matrix_;
+
 		std::optional<RawConfig> get_raw_config();
-		void maybe_set_int(const RawConfig& data, const std::string& key, int* val);
+		void set_opt_int(const RawConfig& data, const std::string& key, int* val);
 	};
 
 	std::ostream& operator<<(std::ostream& strm, const Config& config);

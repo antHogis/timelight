@@ -18,7 +18,7 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 	const App::Config config;
 	std::cout << "Config " << config << std::endl;
 
-	Light::LightMatrix matrix(10, 100);
+	Light::LightMatrix matrix(config.light_matrix().rows, config.light_matrix().cols);
 	Adapter::TerminalAdapter adapter;
 
 	while (true)
