@@ -1,4 +1,5 @@
 #include "adapter/terminal_adapter.hpp"
+#include "app/config.hpp"
 #include "light/light_matrix.hpp"
 #include <chrono>
 #include <iostream>
@@ -13,6 +14,9 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 {
 	// TODO only show with -v flag
 	std::cout << "TimeLight version " << PROJECT_VERSION << std::endl;
+
+	const App::Config config;
+	std::cout << "Config " << config << std::endl;
 
 	Light::LightMatrix matrix(10, 100);
 	Adapter::TerminalAdapter adapter;

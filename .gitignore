@@ -34,3 +34,5 @@
 # CMake build directory
 /build
 
+# App configuration
+timelight.toml
