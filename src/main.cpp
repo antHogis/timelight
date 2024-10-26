@@ -16,7 +16,10 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 	std::cout << "TimeLight version " << PROJECT_VERSION << std::endl;
 
 	const App::Config config;
-	std::cout << "Config " << config << std::endl;
+	std::cout
+		<< "Config start time "
+		<< (int)config.cycle().cycle_start_times.find(App::CYCLE_MORNING)->second.at(0)
+		<< std::endl;
 
 	Light::LightMatrix matrix(config.light_matrix().rows, config.light_matrix().cols);
 	Adapter::TerminalAdapter adapter;

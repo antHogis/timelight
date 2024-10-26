@@ -12,7 +12,8 @@ namespace Adapter
 		void display_matrix(Light::LightMatrix& matrix) override;
 
 	private:
-		void add_colour_block(std::ostringstream& row_stream, Light::LightElement& element);
+		void add_colour_block(std::ostringstream& row_stream,
+		                      Light::LightElement& element);
 
 		bool has_printed_;
 	};

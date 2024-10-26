@@ -41,7 +41,7 @@ namespace Adapter
 	}
 
 	void TerminalAdapter::add_colour_block(std::ostringstream& row_stream,
-	                                     Light::LightElement& e)
+	                                       Light::LightElement& e)
 	{
 		std::string rgb = (std::ostringstream()
 		                   << (int)e.red << ';' << (int)e.green << ';' << (int)e.blue)

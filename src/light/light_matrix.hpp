@@ -15,9 +15,7 @@ namespace Light
 		LightMatrix(int rows, int cols);
 
 		LightElement& element_at(int row, int col);
-
 		void randomize();
-
 		LightMatrixImpl& get_impl();
 
 	private:
