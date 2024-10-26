@@ -31,8 +31,14 @@
 *.out
 *.app
 
-# CMake build directory
+# Build files
 /build
+
+# IDE
+compile_commands.json
+.cache
+.vscode
+.idea
 
 # App configuration
 timelight.toml
